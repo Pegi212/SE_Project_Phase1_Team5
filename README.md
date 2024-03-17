@@ -118,7 +118,291 @@ Creation , implementation , maintenance of the database while making sure that e
 Ensured the modification and search of information by each client and doctor . ]
 
 
-# Deadline
-Submission Deadline: 04.03.2023, 23:59 hours.
+Phase II: User Requirements and Application Specifications 
+Submission Deadline: 18.03.2024, 23:59 
+1.	Chosen Development Model: 
+We selected the optimal software development model by analyzing some crucial key factors . These factors consisted on : 
+•	Development time , particular deadlines and team size 
+•	Constant delivery and client frequent feedback
+•	Project size and complicatedness of it.
+•	Development flexibility 
+•	Assessing the risk tolerance 
+•	Checking if the project requirements coordinate with the chosen model attributes
+
+
+Based on the factors mentioned above we came to the conclusion that the best model to go for is Incremental model . The selection of Incremental model depended on our development team size that consists on 4 collaborators versus development time that is speculated to be 6 weeks . Since the time constraints appear short , Incremental model grants the earlier delivery of the product to the client rather than Waterfall model which requires more amount of time to deliver and deploy. 
+ The small amount of time does not allow us for a clear and detailed documentation of each version of the project. One of the most beneficial thing that Incremental model provides for us is the client collaboration and feedback , we selected incremental model because our client wants to interact with the project vastly .Various stakeholders have the chance to offer input at different levels of development since the requirements specification , development and validation are inter-leaved in this approach . Client requirements can change due to his preferences so the selection of Incremental model was done for the purpose of making the accommodation and settlement of change effortless and cost-effective , while producing the optimal final version that meets the specified client’s requirements and expectations. 
+The division of work in increments enables the effective management and fast advancement of the project. Lastly this approach we intend to follow grants the possibility of constant validation and evolution. Incremental model supports the ongoing testing of each increment added in order to certify that the final version of the product is efficient and high quality. 
+
+
+
+2. User Requirements: 
+a)	Stakeholders : 
+•	Patients : Patients are the fundamental users of this appointment software. They interact with the software while handling their appointments , book the appointments by accessing the particular doctor’s free time , they can edit their personal account in the system or cancel and postpone an appointment due to their preferences. Some of the main functionalities performed by the patient will be : add booking , delete booking , edit settings , sign in , sign out , and log out functionalities. 
+•	Doctors : Aesthetic doctors in the clinic represent essential stakeholders who will interact with this software product . The doctor’s job related to the system is to oversee their schedule , watch the bookings displayed in the system , retrieve from the system their particular patient’s personal information in order to get a historical overview of the patient personal health and health issues he might have faced previously. Doctors can delete a particular appointment , delete their account or access settings functionality . 
+•	Administrators : Administrators represent another group of key stakeholders in charge of keeping under observation the operational part of the system meaning that the admin is responsible for managing the appointments made in the system , recording the patients , adding , deleting patients or doctors , and editing the settings part. They are responsible for controlling and maintaining user accounts . 
+
+b)	User Stories : 
+•	End-users ( Patient, Doctor ) :
+
+For the client / patient : 
+
+As a patient 
+I want to book my appointment within the system 
+So I can obtain aesthetic health care from my preferred doctor.
+
+Benefit : Appointment booking directly from the system. 
+
+As a patient 
+I want to access the doctor’s free and available hours 
+So I can manage my time and come at the right time . 
+
+Benefit : Book the appointment according to doctor’s available time. 
+
+
+As a patient
+I want to come up with appropriate information related to my health and update it when needed
+So the doctor can be informed and understand me better. 
+
+Benefit : Doctor is well informed , so he can diagnose the patient accurately and the medical prescription is correct. 
+
+
+As a patient 
+I want to cancel my appointments when I cannot come and postpone it
+So I can come another time when I am available . 
+
+Benefit : Patients can cancel their appointments or change them in order to come at an appropriate moment without wasting doctor’s available hours .
+
+
+Doctor’s side: 
+                        As a doctor
+                        I want to access my appointments in the system 
+                        In order to manage my time more effectively. 
+
+                        Benefit : Doctors can check their working hours through the system. 
+
+                       As a doctor 
+                       I need to access my patient’s health status 
+                       In order to offer up to date and customized aesthetic care solutions to each patient
+
+                      Benefit : Doctors can change patient’s health information in order to come up with 
+                      optimal solutions.
+
+                      As a doctor 
+                      I need to be informed whether an appointment is canceled or postponed 
+                     In order to organize my time properly. 
+                      Benefit : Doctor’s can access the canceled appointments . 
+
+                     Administrator’s side : 
+                     As an administrator 
+                    I need to be able to insert , update , delete the patient’s and doctor’s information and accounts
+                    In this way I can help the system progress and reduce unnecessary information.      
+
+                   Benefit : Administrators can perform the functionalities for a better system    management.                  
+    
+                   As an administrator 
+                  I need to have control over the system’s execution and functionalities performance 
+                 So I can address each issue faced and operate in an effective system.
+
+                 Benefit : Administrators are informed about the system’s weaknesses and overall performance in order to improve it further . 
+
+
+
+3. Functional Requirements: 
+a)	Brief description : 
+This software product consists on a variety of features which are : 
+•	System that provides a sign-in and log-in platform where each new user can be part of , or existing users can log in and make the booking . 
+•	After logging into the platform each patient can scroll and search for the doctor they need and make the booking . 
+•	System that enables appointment handling by both parties (doctors / patients) , 
+•	System that lets you cancel or postpone the appointment based on your preference.
+•	System that enables doctors to view each patient personal record . 
+•	System that enables the modification of your personal data from the doctor and patient perspective .
+•	System that enables you to delete your account in cases when you don’t want to be part of it anymore , from patient and doctor’s side. 
+
+b)	Acceptance Criteria : 
+
+Booking : 
+•	Users need to choose the convenient date and particular time for their     appointment    □
+•	After doing this the system displays whether this date and time is available , and if it is not it displays which time is available according to the doctor  □
+•	After choosing the appropriate time system informs you with a message that your booking is made . □
+•	Doctors are notified in both cases (new appointment or cancel appointment) with a message via e-mail.  □
+             User’s personal information : 
+•	Users are obliged to sign in with valid information and passwords in order to ensure the authorization and privacy of each patient . □
+•	Only administrators can control the properties related to users which are the inserting , deleting or updating the information and user accounts. □
+•	Each patient can modify their health-care or personal record by inputting new data or update the existing data . □
+•	Doctors can also retrieve information from the patient records and update it when needed . □
+•	Each user can manage their settings part and update it. □
+
+
+
+4. Non-Functional Requirements: 
+a. Brief Description: 
+Describe how well your whole system should work. Is it about being fast, easy to use, or something else? Use simple words to explain each idea. 
+    Nonfunctional requirements are used to evaluate how well the system works, as opposed to examining the system's precise behavior. The system architecture outlines the strategy for putting the nonfunctional requirements into practice. It outlines the intended functioning of the system. 
+Our main focus goes to developing a system that outlines high performance , availability, user-friendliness , strong security and sustainability. During designing and implementation stages we aim to create a product that does not decline when multiple users are interacting with the product at the same time . The system will be able to operate without crashing when the number of appointments increases . Our purpose is to develop a system in which each user’s private information is stored securely . The final aspiration is to develop a product which is straightforward and easy to use for everyone . Clients can book their appointments and doctors can handle their schedules easily . 
+
+
+b. Acceptance Criteria: 
+1.	System Performance: 
+Processing Time : The time it will take to process a report should only be a few seconds.
+Response Time: The system must be able to function without interruption and react fast to commands without pausing.
+2.	Usability
+The interface of the system should be intuitive as well as simple to use, with prompts and instructions that are clear to all users, system interfaces should be created with a minimum amount of color and background. 
+3.	Security
+Security refers to the requirements for safeguarding the system and its information. There are several ways to express security measurements. Several factors include the amount of time and effort required to gain unauthorized access to the system, as well as the level of competence required to breach its security . 
+4.	Sustainability
+Reliability is the degree of software trustworthiness. If and how frequently the system malfunctions in its ability to function. The system's mean time between failures serves as an indicator of reliability.
+5.	Availability
+The system should be available 24/7 and have backup and recovery capabilities in place to ensure that it is always available.
+
+5. Application Specifications: 
+a. Architecture: 
+System architecture : 
+The system's architecture outlines its main elements , their connections, and how they interact with one another. Business strategy, individuals , interactions, design, and it’s IT environment are all included in software architecture and design. 
+Software architecture acts as the system's structure. It allows coordination, interactions, and control of complexity among its various components. All technical and operational requirements are given a systematic respond to when nonfunctional decisions related to the system architecture are made. It maximizes quality features such as performance and security. It includes choosing an organization for software development that will affect the end product's overall effectiveness, accessibility, efficiency, and quality.
+
+
+•	Model: The data and business logic of the application are represented by :  appointments, users ,clinics, and other entities are included.
+•	View: The view part  is made up of the presentation layer,  dashboards, calendars, and forms.
+•	Controller: Controllers manage requests, interpret information from users, and produce answers. They serve as a link between the view and the model, facilitating the correct execution of application logic and data flow.
+
+
+
+•	Interactions:
+
+Requests are made by the user to engage with the view :  arranging appointments, browsing available periods.
+In order to retrieve or modify data, the controller receives these requests, processes them, and communicates with the model.
+In addition to interacting with the database to get or save data, the model carries out business logic actions.
+After processing, the controller delivers the data back to the display so that the user may see it.
+
+
+
+
+System components : 
+•	User-interface (UI) ,  : Here each user will interact with the product in order to book the appointments. This interface ensures that each user can view available hours of the selected doctor , input their medical details and personal information. From the doctor’s perspective the interface provides the possibility to handle their schedules , view their free hours and access relevant patient information. 
+•	Appointment mechanism : This component is classified as primary according to it’s importance . It controls the whole process of booking the appointment while inspecting each doctor’s available hours and also making the particular adjustments into the doctor’s personal schedule when an appointment is being reserved . 
+•	Database : In charge of storing each user’s personal records according to doctor’s and patient’s perspectives.
+•	Admin’s side : Consists of a back-end component related to the administrators of the system . Here the admins can insert or delete users from the system or make particular modifications according to schedules , calendars and user personal information.
+•	Information safeguard : A component that ensures the protection of personal information by utilizing encryption and access control tools in order to act in accordance with security and healthcare regulations. 
+
+
+ 
+
+
+
+ 
+
+
+This schema represents the relationship between presentation layer , application layer and data layer. Presentation layer consists on the user interface from patient , doctor and admin perspective. Application layer actually performs the required functionalities and requirements while retrieving , inputting or deleting data from the database server that represents the last stage of this schema which is data layer. 
+
+
+
+
+b. Database Model: 
+
+•	Tables:
+1.	User
+2.	Admin
+3.	Doctor/Dermatologist
+4.	Patient
+5.	Sessions
+6.	Specialties
+7.	Appointments
+
+
+•	User table will consist on user email and user type fields . The primary key here will be user email . 
+•	Admin table will consist on user email and password . Here the primary key will be user email . 
+•	Doctor table will have doctor id , doctor email, doctor clinic, password , name , surname and specialties fields. The primary key is doctor id.
+•	Patient table will consist on patient id, patient full name , email , address and password. 
+•	Specialties table that accords with what doctors are specialized in , will be divided into specialty id and specialty name. 
+•	Session table will contain only one field : session time that will serve as a primary key of this table. 
+•	Appointment table provides the relationship between doctor , patient and session tables . It contains it’s own primary key : appointment id and three foreign keys referencing to patient table (patient id ) , doctor table (doctor id) and session table (session time ) . This table contains also a date field which stores the date for the particular appointment . Appointment part contains data regarding scheduled appointments, such as the date, time, patient information, and services.
+
+
+•	Relationships:
+Patients can book multiple appointments in different periods . Doctors can have many appointments with various patients . This is recorded in appointments table . ( Many to many relationship). 
+In appointments table doctors , patients and sessions are connected together through each row associated with the particular date. 
+Each doctor can have one or multiple specialties , and each specialty can be divided across multiple doctors. (Many to many relationship) . 
+Each admin is in control of users , patient and doctors and various system functionalities . (One to many relationship)
+Patients are able to schedule many appointments.
+
+
+•	The constraints:
+
+To maintain referential integrity between tables, foreign key restrictions are used.
+Double entries are prevented by unique constraints.
+Organizational policies, including legitimate appointment times and dates, are enforced by check limitations.
+
+c. Technologies Used: 
+
+•	Back – end : The script will be typed in PHP language . The reasons behind the chosen language are : openness and free accessibility , it can be accommodated with many operating systems . PHP is a language that allows incorporation with css , js and html web-based languages which will be essential for the front-end part. Lastly this language is associated with object oriented programming features (OOP)  which provides the possibility to reuse code through inheritance principles or divide the large software product into smaller components through modularity . Related to database management MySql is chosen for its flexibility and ability to handle complex queries .The system can be accessed by using XAMPP and hosting it on localhost.
+•	Front-end: The front end is the user interface of the system. There are used technologies of development like Html , Css , Javascript , Bootstrap that are responsive and easy to use. Javascript is selected according to it’s dynamic features . It provides animation formation ,  manages the inputs and client-side . Bootstrap is incorporated according to it’s responsiveness , since the purpose is to create a software applicable for smartphone, desktop and tablet . Also this technology offers the designing and implementation of web pages faster with the help of it’s predetermined practices and designs. 
+•	 Security : HTTPS for secure communication ,authentication system for user management.
+
+
+
+
+
+
+d. User Interface Design: 
+
+•	Dashboard: A summary of upcoming appointments and easy access to tools for scheduling.
+•	Appointment Scheduler: Forms for inserting patient information and service preferences, calendar view for choosing available times.
+•	User profiles: Users can examine and edit their appointment history and personal information.
+•	Admin Panel: A management interface for users, clinics, and appointments used by administrators.
+
+Homepage : 
+The homepage will consist on the system’s logo and system’s name . In the header part will be included the contact information and the phone number. In the navigation bar will be included an about page , doctors page which consists on some information about specific doctors and the sign in and sign up features . In the center of the homepage users will see “find doctor” button . After clicking find doctor they will enter the booking stage. In the main part of the homepage there will also be included some relevant information and registration features where you can register as doctor or patient. 
+
+When user registers as patient and clicks “find doctor” there will be displayed the doctors and their available hours through a calendar. After the patient choses the appropriate time and date he makes the reservation through the button “ book the appointment ”. Next he receives a confirmation message that the appointment is made. After the booking is closed the patient can cancel it through clicking the button “cancel”. 
+
+            Patients information: From the doctor’s perspective when he wants to access patient’s   information a search bar will be included in order for him to search patients based on their name or other . After he choses the patient , there will be displayed the patient’s medical history and contact information. Doctors can also perform functionalities like cancelling the appointment through the button “cancel”. 
+
+             Settings part : Where users can update their personal information and medical records when needed . 
+
+
+How users will interact with the system , visual representation : 
+
+ 
+
+
+
+
+•	Properties that user interface must have:
+1) Make user interfaces appear basic and "invisible." Make every component a service.
+2) Observe the user's gaze and focus on the arrangement .
+3) Ensure that elements, such as buttons and other common elements, function consistently.
+4) Continue to have a high discoverability
+5) Reduce the amount of steps required to complete a task.
+ 6) Locate controls close to important objects
+7) Apply reusable design principles
+8) Take into account defaults and lighten the load on users.
+
+
+
+e. Security Measures: 
+
+•	Encryption : The transmission of data between the client and server is encrypted using the HTTPS protocol.
+•	Authentication: user authentication and session management through an authentication system.
+•	Authorization : Depending on the user role (e.g., dermatologist, receptionist, admin), role-based access control might limit access to sensitive functions.
+•	Password Security : Use bcrypt to save encrypted login credentials so that they remain secure even in the case of a database hack.
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
