@@ -387,6 +387,58 @@ e. Security Measures:
 •	Authorization : Depending on the user role (e.g., dermatologist, receptionist, admin), role-based access control might limit access to sensitive functions.
 •	Password Security : Use bcrypt to save encrypted login credentials so that they remain secure even in the case of a database hack.
 
+
+
+Uploaded by Pegi
+Phase 3 : Software design and modelling
+Group name : Team 5 
+
+Software architecture : 
+System architecture :
+Our website called “Dermo-Aesthetic Appointment System” was created to make it easier for patients and dermatologists in aesthetic clinics to schedule and manage visits. It is made up of multiple components that are interrelated that function as a unit to offer a smooth user experience.
+
+Patients can use the online system to handle their appointments, view available timetables, and plan appointments according to their preferences. Dermatologists have access to control patient appointments, check their own schedules, and amend their availability. 
+
+Component diagram :
+Components description : 
+•	Front-end component : When user communicates with the program the front-end component sends the request to the back-end server for example when a client signs in the frond end sends the request to the back-end which communicates with the database in order to store the information. The back-end server operates regarding to these requests by validating and verifying the information from inputs and connects with other components such as authorization system or database system . When the back-end server has performed the required operations for example checking appointment availability or booking an appointment , the response is produced and it is sent back to the front-end which modifies the user interface properly.
+•	Back-end server and the database components : The back-end server connects with the database to get or save the information needed regarding different functionalities that the application offers . For example when the patient requests the free hours of the specified doctor , the back-end retrieves that information from the database and displays it to the patient . When the back-end processes requests from different users , it modifies the database , for example when a user cancels the appointment , the database is modified by adding a new available hour for a particular doctor. 
+•	Authentication , authorization and back-end server : When the user logs into the platform or takes an action that requires authorization (such as booking an appointment ) , the frontend transfers the login information into the back-end server . The back-end server communicates with authorization and authentication component to make sure that user’s data is verified and valid . By checking the authorization status and particular user roles the back-end server judges if the user is permitted to perform the specified request. 
+•	Booking engine and back-end server : The booking engine is connected with the back-end server , because when the user requests to book an appointment , he actually executes the booking algorithm which is performed in the back-end side. This algorithm is indicated by some other factors which are available hours , doctor’s timetable , what client selects according to doctor preference or time and date preference . When the client actually performs the operation of choosing the date , time and doctor the booking engine modifies the database and sends the confirmation message to all parties involved in the process. 
+•	Esthetician management and back-end component : The back-end server facilitates the maintenance of profiles and availability for estheticians . When esthetician reloads the page or refreshes their schedule , the back-end component assesses these modifications and modifies the database . The frond-end part may be also connected with the back-end part to display esthetician profiles such as the available hours for esthetician varying on the current modified information .
+•	Notifications and back-end server : The notification component is linked to the back-end server to transfer notifications to the users , for example when the booking process is performed the back-end component sends the request to the notifications side that indicate that kind of response . The notification side assesses these requests and delivers the message to the appropriate parties 
+   
+  Component diagram : 
+
+ 
+	
+
+Sign in feature : 
+ 
+Log in feature : 
+ 
+
+Detailed design : 
+Class diagram :
+
+ 
+Classes : 
+1.	User 
+2.	Doctor
+3.	Patient 
+4.	Admin 
+5.	Appointments 
+6.	Sessions
+The user class will contain it’s own attributes : user ID , username , password and email . Admins , patients and estheticians ( doctors ) primarily log into the system as users . The user class will contain the functions log in () and sign up () , which take as parameters username , password and email . Both of the functions return types are Boolean . 
+The doctor class will contain the attributes : doctor ID , doctor email , clinic , password , doctor name and doctor surname . The functions related to doctors are view calendar() where doctor checks his schedule . The function takes as parameter the date . The second is add appointment() where the doctor adds an appointment . The function takes as parameter the date and time . The third function is delete appointment() where the doctor cancels the appointment. The function’s return types are Boolean . 
+Patient class will contain the attributes Patient ID, Patient Name , Email , Address, Password. The functions related to patients are create Appointment () where the patient books the appointment . The function takes as parameter the doctor ID , date and time . The second function is cancel Appointment () where the patient cancels the appointment previously booked . This function takes as parameter the appointment ID . The function’s return types are Boolean . 
+Patients class and Doctor class are directly related with the Appointments class. The appointment’s attributes are patient ID , doctor ID , date , time and appointment ID . The functions related to appointments are postpone Appointment() where the patient postpones the appointment to another time . The function takes as parameters the date , time and appointment id ( that will be postponed ) . The second function related to appointments is remove Appointment () which takes as parameter the appointment ID ( that will be removed ) . The function’s return types are Boolean . 
+The session class is directly connected with doctors assuming that the doctors are the ones in control of sessions . Session class contains the attributes doctor ID and session time . The functions related to sessions class are book session () which takes as parameter patient ID , and remove session () which takes as parameter patient ID . Both these function’s return types are Boolean . 
+Specialties class is related to doctor’s specialties . It contains the attributes : specialty ID and specialty name . 
+
+
+
+
  
 
 
