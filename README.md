@@ -439,8 +439,7 @@ The session class is directly connected with doctors assuming that the doctors a
 Specialties class is related to doctor’s specialties . It contains the attributes : specialty ID and specialty name . 
 
 ##Uploaded by Kevi
-
-Sequence diagram : 
+##Sequence diagram : 
 1.	Appointment request by client : 
 
  
