@@ -449,7 +449,8 @@ Specialties class is related to doctor’s specialties . It contains the attribu
 
 
 
-## Database design : (Enxhi)
+## Database design : 
+# Uploaded by Enxhi
 Database model 
 
  
