@@ -488,7 +488,7 @@ Doctor Specialties table represents the relationship between doctor and specialt
   Schema outline for higher flexibility : Keeping in mind that the data being entered will increase overtime , we have designed a database schema appropriate and flexible regarding to voluminous information .
 
 ## Modelling :
-## Sindi
+## Uploaded by Sindi
 Use case diagram 
 
   Use cases :
