@@ -391,7 +391,7 @@ e. Security Measures:
 
 ## Phase 3 : Software design and modelling
 ## Group name : Team 5 
-# Uploaded by Pegi
+## Uploaded by Pegi
 
 
 
@@ -450,9 +450,8 @@ Specialties class is related to doctor’s specialties . It contains the attribu
 
 
 ## Database design : 
-# Uploaded by Enxhi
-Database model 
-
+## Database model 
+## Uploaded by Enxhi
  
 
 •The data within the application is organized through the following tables : 
@@ -488,7 +487,8 @@ Doctor Specialties table represents the relationship between doctor and specialt
  Continuous support : Meaning that queries running , operations , executions and resource handling are under continuous observation. This provides higher capabilities and performance according to the overall database system .        
   Schema outline for higher flexibility : Keeping in mind that the data being entered will increase overtime , we have designed a database schema appropriate and flexible regarding to voluminous information .
 
-Modelling : Sindi
+## Modelling :
+## Sindi
 Use case diagram 
 
   Use cases :
