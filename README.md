@@ -438,6 +438,35 @@ Patients class and Doctor class are directly related with the Appointments class
 The session class is directly connected with doctors assuming that the doctors are the ones in control of sessions . Session class contains the attributes doctor ID and session time . The functions related to sessions class are book session () which takes as parameter patient ID , and remove session () which takes as parameter patient ID . Both these function’s return types are Boolean . 
 Specialties class is related to doctor’s specialties . It contains the attributes : specialty ID and specialty name . 
 
+##Uploaded by Kevi
+
+Sequence diagram : 
+1.	Appointment request by client : 
+
+ 
+
+In this diagram patient communicates with the application through the front-end side in order to book an appointment . The front-end transfers this request to the back-end side and the back-end shows to the user all the services that can be performed by estheticians . Next the back-end side starts searching into the database for appointment availableness . After this the back-end starts searching esthetician’s free hours into the database and gets this information to display into the front-end part. This information is transferred into the front-end part and patient choses the date , time , esthetician and service . This selected information is transferred again into the back-end component in order to make the appointment booking . After the appointment is booked the modifies the esthetician schedule in the database part. When this operation is fully performed the patient receives the notification that the booking is made. 
+
+2.	Log-in sequence diagram 
+
+ 
+The Client submits their login information (e.g., name and password) via the Frontend Interface. The Frontend Interface transmits the login information to the Backend Server for verification. The Backend Server checks the user's  login information against the information contained in the Database. Following successful login, the Backend Server analyzes the user's position (e.g., client, esthetician, admin) to figure out rights. Assuming the user is an admin, the Backend Server pulls their data and rights from the database.
+3.	Admin modifies settings sequence diagram : 
+ 
+In this diagram admin enters his primary information into the front-end side when he logs in . The front-end transfers this information into the back-end side to verify and validate this information in order for the admin to continue with the next steps. The back-end server authorizes admin to continue by comparing the data submitted by admin with the data that are stored in the database for that particular admin. Next the back-end server permits the admin to modify system settings . 
+	
+
+
+
+
+
+
+4.	Esthetician view patient information sequence diagram : 
+ 
+Doctor requests patient information . This request goes into the database where the information is stored . Doctor searches the information with patient ID , primary key of patient entity. In order to retrieve patient’s information doctor needs authorization . When authorization is performed the doctor gets the information , in other cases when the authorization fails the application displays error message.
+5.	Update esthetician information from admin sequence diagram : 
+ 
+Admin logs in the system , and requests update from the system . The system communicates with the database in order to search for the doctor that will be updated by (Doctor ID) . To perform this activity administrator needs authorization . If authorization is correct the application displays ok and the update is done. 
 
 
 
@@ -521,6 +550,7 @@ Valid Time Slot: If the time slot becomes vacant after reviewing the request, it
 Pending Verification: If either the patient or the esthetician arrange the appointment, it moves to this state. It is holding once verification has been submitted.
 Confirmed Appointment: In this case, those involved (patient and esthetician) agreed on the date and time and it is arranged.
 End: Final stage where the process is done.
+
 
 
 
