@@ -393,50 +393,34 @@ e. Security Measures:
 
 
 
-## Modelling: (Enxhi)
-Use case diagram 
+
+
+## Database design : (Enxhi)
+Database model 
+
  
- 
- 
 
-In these use case diagrams are represented three actors : patients who book appointments within the system , doctors who offer the services required by each patient while organizing their disposable time and admins in charge of controlling the overall system and manage the patient and doctor information. 
+•The data within the application is organized through the following tables : 
+1.	Patient 
+2.	Admin
+3.	Doctor
+4.	Session 
+5.	Appointment 
+6.	Specialties
+7.	Doctor Specialties 
+The respective attributes for each table are as follows : Patient ( Patient ID, Patient Name , Email , Address, Password ) . This table will store information about each patient . The doctor’s table attributes are : Doctor ( Doctor ID , Doctor Email , Doctor Clinic , Password , Doctor Name , Doctor Name , Doctor Surname ) . Admin table consists on the attributes , Admin ( email, password) . The session table will be divided into : Session (Session Time , Doctor ID foreign key referencing Doctor ID in Doctor table ) . Specialties table will consist on the attributes : Specialties (Specialty ID, Specialty Name). Doctor Specialties table represents the relationship between doctor and specialties . It contains two attributes each of them foreign keys ( Specialty ID referencing Specialties and Doctor ID referencing Doctor ) . Appointment table represents the relationship between doctors and patients , containing the foreign keys : Doctor ID referencing Doctor and Patient ID referencing Patients . It has two other attributes : appointment ID and date.
+Relationships :  
+           • Doctors and Sessions : The table Sessions shows the doctor’s free hours in order for the patients to book   appointments . Each session is connected with one doctor and one doctor is associated with many sessions . One to many relationship. 
+         • Patients and appointments : In the appointments table is stored information related to patients who book appointments regarding to a specific doctor , meaning that one patient can book many appointments and one appointment is associated with one patient . One to many relationship. 
+        • Doctors and specialties : The table doctor specialties represents the relationship between doctors and their particular specialties . Since each doctor can have many specialties and one specialty is associated with many doctors this is a Many to many relationship. 
+       • Doctors and appointments : The relationship between doctors and appointments exists in the table appointments where each patient books appointments regarding to a specific doctor. One doctor has many appointments booked , while one appointment is associated with one doctor . One to many relationship. 
 
--Use cases :
-Patients log-in or sign-in into the system , book the appointments or cancel the appointment .They can leave the system by deleting their existing account. They can modify their personal account due to their preference. 
-Doctors can view online their future or current appointments booked in the system . They can check the patient’s information including medical history to be more informed before the examination of patient. They can delete their existing account and modify personal account.
-Admin : They can insert new accounts for doctors or remove their accounts from the system. They are in charge of controlling doctor’s sessions by adding new sessions or deleting sessions that are primarily booked by patients . They can update doctor’s information within the system.
-
--Activity diagram : 
-Patient booking the appointment activity diagram : 
- 
-This diagram explains how patient interacts with the system when he wants to book an appointment. After logging in the patient selects “book appointment “ functionality that the application provides. When the system interacts with the database , it displays into the front-end side all the services that the doctors provide. Patient then can select the type of service he wants based on the preference . After selecting the service , system interacts again with the database in order to retrieve the doctors that provide the service required. Patient choses the doctor and the back-end transfers the available sessions of that doctor retrieved from the database component into the front-end component . The available hours are displayed and patient selects the session appropriate for him . When this process is actually completed successfully the system notifies the patient that booking process is completed . 
-
--Admin updating doctors information activity diagram : 
- 
-This diagram describes the process  of administrators performing changes into doctors . Admin firstly logs into the system with his credentials . The two options provided for him are insert new doctor or overview doctors . When admin overviews the doctors he actually searches for one particular doctor and the back-end gives that information after searching into the database with the doctor’s id . That doctor’s data is displayed into the front-end side and admin choses either to delete that doctor from the system , thus deleting his records from database or just get this information for his own purposes . When admin wants to add a new doctor in the system he selects the option “insert doctor “ and the system requires from him to complete the fields with information regarding that doctor that will be added . When admin clicks “save” this new record will be stored into the database and can be retrieved whenever he wants . 
-
--Doctor updating his schedule activity diagram : 
- 
-In this diagram are described the modifications that doctor can make regarding to his schedule . At first doctor logs in with his credentials , then the calendar is fetched from the database meaning that the back-end requests from the database to transfer that doctor’s personal schedule . When the schedule of the doctor is displayed into the front-end , doctor can chose to add a new session . When he clicks “ add new session “ he selects the date and time for this session through the user-interface . This information is saved and is inserted into the sessions table at the database . The process is completed and the doctor receives the confirmation notification . 
-In other cases when the doctor wants to cancel an appointment he performs the same steps except the part when he selects “cancel session “ through the user-interface. The doctor selects the session to be canceled , he cancels the session and clicks save . This information is then updated in the database . After cancellation process is completed he receives a confirmation notification . 
-
--Patient log-in sign in activity diagram : 
- 
-In this diagram is described the patient’s log-in and sign-in that this application provides . When the patients logs in he inputs his personal information and the back-end checks this information by comparing the data that the patient inputs with the data that is actually stored in the database . If he has typed the right username and password patient can overview the dashboard through the user’s interface because back-end has retrieved the patient’s personal information fetched in the database for that patient. When the patients signs up for the first time , he inputs his credentials while the back-end authenticates and validates this information . If the information is valid then , new account is created for this patient . The dashboard is displayed through user interface and new records of this patient are stored in the table patients within the database . 
-
--State diagrams :
-State diagram for appointment booking process : 
- 
-Start: The booking process begins .
-Appointment process :This state is a prime example of the fundamental procedure used to schedule appointments.
-New process : The software receives a fresh request for an appointment .
-Handling the demand:  This stage shows that the software is handling the appointment request, confirming for availability, and verifying the data provided.
-Valid Time Slot: If the time slot becomes vacant after reviewing the request, it enters this state, giving a signal that it is ready for reservation.
-Pending Verification: If either the patient or the esthetician arrange the appointment, it moves to this state. It is holding once verification has been submitted.
-Confirmed Appointment: In this case, those involved (patient and esthetician) agreed on the date and time and it is arranged.
-End: Final stage where the process is done.
-
-
+         
+      ## The efficiency of data storage is provided through following a variety of principles : 
+  Normalization : Normalization procedure is followed in order to reduce anomalies and data redundancy . This ensures that the database is well organized , data is integrated and redundant information is eliminated . 
+  Query improvement : We have ensured that query writing is structured and logical while maximizing database performance by using appropriate indexing techniques . 
+ Continuous support : Meaning that queries running , operations , executions and resource handling are under continuous observation. This provides higher capabilities and performance according to the overall database system . 
+  Schema outline for higher flexibility : Keeping in mind that the data being entered will increase overtime , we have designed a database schema appropriate and flexible regarding to voluminous information .
 
 
 
