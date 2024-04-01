@@ -408,18 +408,24 @@ Database model
 5.	Appointment 
 6.	Specialties
 7.	Doctor Specialties 
-The respective attributes for each table are as follows : Patient ( Patient ID, Patient Name , Email , Address, Password ) . This table will store information about each patient . The doctor’s table attributes are : Doctor ( Doctor ID , Doctor Email , Doctor Clinic , Password , Doctor Name , Doctor Name , Doctor Surname ) . Admin table consists on the attributes , Admin ( email, password) . The session table will be divided into : Session (Session Time , Doctor ID foreign key referencing Doctor ID in Doctor table ) . Specialties table will consist on the attributes : Specialties (Specialty ID, Specialty Name). Doctor Specialties table represents the relationship between doctor and specialties . It contains two attributes each of them foreign keys ( Specialty ID referencing Specialties and Doctor ID referencing Doctor ) . Appointment table represents the relationship between doctors and patients , containing the foreign keys : Doctor ID referencing Doctor and Patient ID referencing Patients . It has two other attributes : appointment ID and date.
-Relationships :  
-           • Doctors and Sessions : The table Sessions shows the doctor’s free hours in order for the patients to book   appointments . Each session is connected with one doctor and one doctor is associated with many sessions . One to many relationship. 
-         • Patients and appointments : In the appointments table is stored information related to patients who book appointments regarding to a specific doctor , meaning that one patient can book many appointments and one appointment is associated with one patient . One to many relationship. 
-        • Doctors and specialties : The table doctor specialties represents the relationship between doctors and their particular specialties . Since each doctor can have many specialties and one specialty is associated with many doctors this is a Many to many relationship. 
-       • Doctors and appointments : The relationship between doctors and appointments exists in the table appointments where each patient books appointments regarding to a specific doctor. One doctor has many appointments booked , while one appointment is associated with one doctor . One to many relationship. 
+The respective attributes for each table are as follows : Patient ( Patient ID, Patient Name , Email , Address, Password ) .
+This table will store information about each patient . The doctor’s table attributes are : Doctor ( Doctor ID , Doctor Email , Doctor Clinic , Password , Doctor Name , Doctor Name , Doctor Surname ) .
+Admin table consists on the attributes , Admin ( email, password) . The session table will be divided into : Session (Session Time , Doctor ID foreign key referencing Doctor ID in Doctor table ) .
+Specialties table will consist on the attributes : Specialties (Specialty ID, Specialty Name).
+Doctor Specialties table represents the relationship between doctor and specialties . It contains two attributes each of them foreign keys ( Specialty ID referencing Specialties and Doctor ID referencing Doctor ) . Appointment table represents the relationship between doctors and patients , containing the foreign keys : Doctor ID referencing Doctor and Patient ID referencing Patients . It has two other attributes : appointment ID and date.
+**Relationships :**
+ • Doctors and Sessions : The table Sessions shows the doctor’s free hours in order for the patients to book   appointments . Each session is connected with one doctor and one doctor is associated with many sessions . One to many relationship. 
+• Patients and appointments : In the appointments table is stored information related to patients who book appointments regarding to a specific doctor , meaning that one patient can book many appointments and one appointment is associated with one patient . One to many relationship. 
+• Doctors and specialties : The table doctor specialties represents the relationship between doctors and their particular specialties . Since each doctor can have many specialties and one specialty is associated with many doctors this is a Many to many relationship.
+• Doctors and appointments : The relationship between doctors and appointments exists in the table appointments where each patient books appointments regarding to a specific doctor. One doctor has many appointments booked , while one appointment is associated with one doctor . One to many relationship. 
 
          
       ## The efficiency of data storage is provided through following a variety of principles : 
   Normalization : Normalization procedure is followed in order to reduce anomalies and data redundancy . This ensures that the database is well organized , data is integrated and redundant information is eliminated . 
+  
   Query improvement : We have ensured that query writing is structured and logical while maximizing database performance by using appropriate indexing techniques . 
- Continuous support : Meaning that queries running , operations , executions and resource handling are under continuous observation. This provides higher capabilities and performance according to the overall database system . 
+  
+ Continuous support : Meaning that queries running , operations , executions and resource handling are under continuous observation. This provides higher capabilities and performance according to the overall database system .        
   Schema outline for higher flexibility : Keeping in mind that the data being entered will increase overtime , we have designed a database schema appropriate and flexible regarding to voluminous information .
 
 
