@@ -424,8 +424,8 @@ Doctor Specialties table represents the relationship between doctor and specialt
 
 • Doctors and appointments : The relationship between doctors and appointments exists in the table appointments where each patient books appointments regarding to a specific doctor. One doctor has many appointments booked , while one appointment is associated with one doctor . One to many relationship. 
 
-         
-      ## The efficiency of data storage is provided through following a variety of principles : 
+       
+      [The efficiency of data storage is provided through following a variety of principles :]
   Normalization : Normalization procedure is followed in order to reduce anomalies and data redundancy . This ensures that the database is well organized , data is integrated and redundant information is eliminated . 
   
   Query improvement : We have ensured that query writing is structured and logical while maximizing database performance by using appropriate indexing techniques . 
