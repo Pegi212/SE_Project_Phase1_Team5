@@ -549,6 +549,348 @@ Valid Time Slot: If the time slot becomes vacant after reviewing the request, it
 Pending Verification: If either the patient or the esthetician arrange the appointment, it moves to this state. It is holding once verification has been submitted.
 Confirmed Appointment: In this case, those involved (patient and esthetician) agreed on the date and time and it is arranged.
 End: Final stage where the process is done.
+Phase IV - Software Testing
+
+1.Introduction to Testing:  
+Software testing acts as a critical part with its essential role during software development. This phase covers a variety of test tasks assigned to each component that makes up our software in order to recognize bugs or various defects that have arisen. During this phase we execute the application and discover how it reacts to particular inputs or situations in order to determine whether the application developed provides efficiency and the functionalities required from stakeholders or customers. This way we verify the accuracy, dependability, capacity, potential and behavior. Software testing process ensures that PHP code complies with the specification and meets the requirements. This is an important part to examine the functionality of a component and how it works.
+1.	Defect recognition : Testing contributes to identifying weak spots of the application and resolving the deficiencies and differences between the current and the predicted state and software’s way of acting. By recognizing the problems early we aim to resolve and put a stop to particular problems that might become apparent in the future. 
+2.	 Quality guaranteeing : General quality and functionality of the software can be enhanced through testing. It validates our product according to pre-established benchmarks or standards along with verifying whether the application meets what the customer wants, usefulness and safety. Through conducting frequent testing tasks we assure that the product distributed conforms to the predetermined specifications and adds business value. 
+3.	Risk management : Testing contributes widely in moderating the risks. We evaluate the influence of probable collapses or weaknesses through testing and identify quicker the fields for advancement. 
+4.	Constant advancement : Through its iterative development and approach, testing can contribute to our team in terms of recognizing different possibilities for improvement, clarify requirements while making it flexible and cost-effective when the business needs shift. By distributing high performance and value to stakeholders and business through testing we meet customer expectations. 
+ 
+2.Purpose of Testing:
+Testing code is a significant part of a software development. The aim of testing is to identify various functional problems, improve quality, change and fix errors as mentioned before. In the appointment booking application’s circumstances, testing is critical for making sure that this application meets the functional and non functional requirements.
+1.	Recognizing errors in early stages : Through structured testing tasks we come across concerns related to performed functionalities of the application, along with incorporation with other systems and exterior environment , data verification and user satisfaction. We recognize errors in early stages through : 
+•	Unit testing : We employed unit testing in validating the behavior of units or components that the application encompasses. Through executing the software with a structured set of inputs we check whether the components perform their predetermined functionalities. We test separate functions of the codebase, various algorithms applied , classes as whole and how these individual components/units are incorporated with other components within the software. Some examples of unit testing might include user credentials confirmation functions such as login() or sign-in(), notification functionalities such as testing sendConfirmation() function, appointment handling engine such as book appointment() function, database testing such as fetch appointments according to esthetician schedule or patient. 
+•	Integration : Here we check how these single components mentioned before connect and interact with each other. Some integration tests might be : 
+1.	Database integration : We test whether the database component properly communicates with the appointment booking component to insert, delete or modify information into the database. This is done through storing an artificial appointment information into the database and checking whether the appointment brought back from using the functions in the Appointment component matches the one we previously inserted into the database component. This is accepted only in cases where we retrieve the correct information. 
+2.	Checking the user credentials when they log in or sign in : Here we check the communication between appointment and authentication components. This is done through artificially log-in and seeking to book an appointment. The integration test is only accepted in cases when after the log-in operation is performed the user can successfully book an appointment.
+3.	User interface component and appointment management component : Here we check whether the Appointment component integrates properly with the UI component. The tests are performed through accessing the user interface and booking the appointment through it. This type of test is accepted only if this action is performed without generating error.
+4.	Notification component integration : The notification component is integrated with the appointment component. This interaction is tested through artificially booking an appointment and waiting to be notified that the appointment is made. 
+•	    System testing : System testing is done through executing the overall software to test whether it fulfills the requirements , criteria and is incorporated properly into the entire environment.
+1.	Booking service : Testing the whole appointment booking operation from the moment when the user interacts with the front-end until the database modifies. This test is performed through artificially entering log-in data , next the application displays the doctors and after that, the appropriate hours are shown. The appointment request is transmitted and the notification is displayed. If the database is modified meaning that a new row is inserted involving the data inputted from the request then this test is accepted. 
+2.	Safety test : This is done by evaluating the entire security system. Tests related to security can be performed through trying to complete prohibited operations without proper user authorization or trying to have access to other user’s personal information. Safety tests protect the whole system from data corruption and ensure that access is limited towards user’s personal information and other areas that require configuration. 
+3.	Compatibility : Testing the web application from various browsers and digital tools  to ensure that it responds similarly from each of the browsers and devices , thus making sure that the application is responsive and performs the requirements similarly in different devices and from different browsers. 
+4.	Booking conflict settlement : This test is responsible for making sure that the system limits conflicting bookings or settles the confrontations between these bookings. The test is done through requesting appointments with similar details(like similar date and time with similar estheticians) and observing how the system behaves. The test is accepted only if the system recognizes the confrontations between these appointments and sends the proper notification to the user (f.e This time is not available, try another time). 
+•	    Acceptance Testing :  It aims to show that the application performs what the business and the user expects from the application along with fulfilling the intentions of various stakeholders involving estheticians, patients, admins etc. Acceptance standards depend on user stories , user and system requirements and the acceptance tests are only accepted if these standards are met. 
+3. Testing a single component 
+1.	Appointment class : Appointment class is essential related to appointments service in terms of encompassing the fundamental functionalities of adding, canceling or modifying(postponing) appointments. These are critical , because the entire mechanism of the application can be impacted if bugs or deficiencies exist in this component. This component is defined as complex because of the continuous verifications of data and the communications of this component with other components (f.e with the notification system , UI , database ). This component makes sure that the user inserts , deletes or modifies appointment data without interacting directly with the database. Appointment component is the most important one because the functionalities it offers are prioritized by users , meaning that the users aim to book appointments quickly and without errors, overview correct calendars and be notified whenever they book an appointment , cancel an existing one or postpone it. Lastly as the software users increase and the user’s requests for bookings grow faster the performance tests must be performed. Performance testing means that the system is able to manage multiple bookings or other user requests without reducing performance. 
+2.	Notifications: Notification component is responsible for notifying users whenever their booking was successful , the appointment is deleted or the appointment is postponed. Notifications component is crucial because it creates a friendlier interaction between users and the system by continuously notifying them after executing an action within the system. Notification tests can be done by executing different actions and waiting for the application to react by sending notification messages to the user. 
+3.	User verification: Through this component users can be authenticated and authorized to perform a variety of actions involved with each user role. This component is defined as complex because it validates and verifies each user through interaction with the database where user information is stored along with overseeing the sessions and being in compliance with security measures. It is crucial because it is responsible for the overall system’s safety and data security. User verification tests can be performed by inputting valid or invalid credentials and observing how the system behaves in these situations. 
+4.	Booking Interface: This component is crucial and primary user interface for making reservations with estheticians. Furthermore it is more than a need,  towards providing clients a smooth and straightforward process while planning their choice of goods or services. By making appointment scheduling easier than ever, the Booking Interface component contributes significantly to customer pleasure and participation. It is tested for responsiveness, ease of use, and usefulness among a variety of platforms and resolutions. Moreover, it guarantees that consumers are able to rapidly browse existing schedule slots, pick desired activities, and finish the scheduling procedure before facing unwanted difficulties or mistakes. Via rigorously evaluating the Booking Layout, we provide a user-friendly yet effective booking experience, promoting friendly relationships among consumers to the reservation process.
+5.	Admin dashboard: Unit examination performed by the Admin Dashboard section verifies that every module or classes works properly inside the esthetician appointment booking system's administration interface. Tests examine performance, speed, and safety measures, ensuring managers have a dependable and simple to operate interface.
+
+       4. Test Cases : Here we describe some of the main test cases that ensure the functionality expected from the software. 
+1.	System limits patients when they try to book an appointment from the past. 
+•	This is done through requesting an appointment within a past date and observing how the system reacts to this type of input. 
+•	 The test case is only accepted when the system generates an error and requests the user to enter another time for the appointment. 
+2.	User V&V test 
+•	The test is performed through inputting the correct credentials for log-in or sign-in and waiting for the system to display the home page. 
+•	The test is accepted only if the user can log-in quickly and perform his operations after. 
+3.	Users with invalid information are declined from the system when they try to log into the platform. 
+•	This test is done through trying to enter incorrect data when logging in. 
+•	The test is only accepted in cases when the system after receiving this incorrect information notifies the user to enter his information again. 
+4.	 The notification component sends the confirmation notification to the patient booking the appointment.
+•	The test is done through booking an appointment and waiting for the confirmation notification. 
+•	The test is only accepted if after booking the appointment successfully the system notifies the user. 
+5.	Appointment postponement testing 
+•	The test is performed to ensure that patients can postpone the appointment to another time. 
+•	The test’s tasks are : log-in the application with the correct credentials, go to “my appointments” and select the appointment that needs to be canceled or postponed, click the button postpone and after that you are requested to enter the new date and time. The application confirms this operation by sending a notification that the appointment is postponed. 
+•	The test is only accepted if the appointment is postponed and the new date and time are displayed into “my appointments” section while confirming this process with the notification in the end. 
+6.	Delete an appointment testing 
+•	This test is performed to ensure that the patients can cancel/delete their booked appointments.
+•	For this type of test we need to log in as a user and then go to “my appointments”. There we choose the appointment that needs to be canceled and click the button “cancel”. After this operation is done the system notifies the user for the cancellation made. 
+•	This test case is only accepted if the appointment can be deleted and the data being removed is demonstrated in the patient’s upcoming appointments and in the database holding the appointments data while confirming this whole process with the notification in the end. 
+7.	Test case for invalid input
+•	The test is done through trying to enter unacceptable input for example absent information into the fields that need to be filled and unacceptable formation of password or username.
+•	The test is accepted only when after entering invalid data the program generates an error and requests to enter the information again. 
+8.	Test case for user-interface accurateness in showing the appointments date , time and other specifications.
+•	This test is done through logging into the system and trying to book appointments with different specifications. After getting the confirmation , we go to the appointments list and check whether the predetermined appointments specifications are shown correctly into the list. 
+•	The test is accepted if the User Interface shows the appointments entered previously exactly and without errors involving all the time date and esthetician specifications. 
+
+5.Choosing Testing Frameworks:
+For the testing phase we have chosen PHPUnit due to the fact that the code is written in php language. This testing framework is broadly employed in the testing phase since it is the usual framework for this type of language. It supports a variety of assertions and functionalities for developing extensive unit/component tests. PHPUnit involves persistent and continual servicing and progress with new functionalities being added frequently. Lastly the community assists you with all-inclusive documentation and instructions easy accessible. 
+
+1.	Homepage Interface : 
+ 
+
+
+2.	Here we test how the verification component behaves when a user tries to sign in with credentials used before. This test case is done through inputting the data inserted before in the application and the test is only accepted if this component notifies the user that the data inserted by him is used before. 
+ 
+ 
+
+
+
+
+Output : 
+ 
+
+3. Testing the authorization and verification component when the user logs in with valid credentials. This is done through clicking log-in and entering username and password. This test is accepted when the component verifies the user by retrieving the data from the database holding that user’s data and displaying the patient dashboard. 
+
+Output : 
+ 
+
+The appointments schedule for the patient : 
+ 
+
+This test case is performed to test whether the system, after displaying the searched doctor name and location, displays the doctor’s information for example name, email, specialty, city and events. The inputs are doctor name and location , after clicking search we wait for the outcome results. The test is accepted only if after performing the operations mentioned above the doctor’s specifications are displayed.
+Test:
+ 
+Output : 
+
+ 
+
+6.Writing Test Code:
+Setting up composer and phpUnit to write and run tests: 
+ 
+Checking version :
+ 
+Configuration file : 
+ 
+Modify Json file : 
+ 
+Testing user service class : 
+Code : 
+<?php
+use PHPUnit\Framework\TestCase;
+
+require_once __DIR__ . '/../services/userService.php';
+
+class UserServiceTest extends TestCase
+{
+    private $userService;
+    private $db;
+
+    protected function setUp(): void
+    {
+        $this->userService = new UserService();
+        $this->db = DbConfig::getConnection();
+    }
+
+    // Test cases for createUser
+    public function testCreateUserSuccess()
+    {
+        $result = $this->userService->createUser('p', 'newuser', 'password123');
+        $this->assertTrue($result);
+    }
+
+ 
+    // Test cases for getUser
+    public function testGetUserExistingId()
+    {
+        $user = $this->userService->getUser(3);
+        $this->assertIsArray($user);
+        $this->assertEquals('3', $user['uid']);
+    }
+
+    public function testGetUserNonExistingId()
+    {
+        $user = $this->userService->getUser(999);
+        $this->assertNull($user);
+    }
+
+    // Test cases for updateUser
+    public function testUpdateUserSuccess()
+    {
+        $result = $this->userService->updateUser(1, 'user', 'updateduser', 'newpassword123');
+        $this->assertTrue($result);
+    }
+
+   
+
+    // Test cases for deleteUser
+    public function testDeleteUserExistingId()
+    {
+        $result = $this->userService->deleteUser(2);
+        $this->assertTrue($result);
+    }
+
+
+    // Test cases for listUsers
+    public function testListUsersNotEmpty()
+    {
+        $users = $this->userService->listUsers();
+        $this->assertNotEmpty($users);
+    }
+
+   
+
+    // Test cases for getPatients
+    public function testGetPatientsNotEmpty()
+    {
+        $patients = $this->userService->getPatients();
+        $this->assertNotEmpty($patients);
+    }
+
+ 
+
+    // Test cases for getDoctors
+    public function testGetDoctorsNotEmpty()
+    {
+        $doctors = $this->userService->getDoctors();
+        $this->assertNotEmpty($doctors);
+    }
+
+
+    // Test cases for getSpecialities
+    public function testGetSpecialitiesNotEmpty()
+    {
+        $specialities = $this->userService->getSpecialities();
+        $this->assertNotEmpty($specialities);
+    }
+
+  
+
+    protected function tearDown(): void
+    {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+Running tests
+Command : ./vendor/bin/phpunit --testdox  .\tests\UserServiceTest.php  
+Testing user service class : 
+Output : 
+
+ 
+
+
+
+
+
+Testing appointment service class : 
+Code : 
+
+
+<?php
+use PHPUnit\Framework\TestCase;
+
+require_once  __DIR__ . '/../services/appointmentService.php';
+
+class AppointmentServiceTest extends TestCase
+{
+    private $appointmentService;
+    private $db;
+
+    /**
+     * @throws Exception
+     */
+    protected function setUp(): void
+    {
+        $this->appointmentService = new AppointmentService();
+        $this->db = DbConfig::getConnection();
+    }
+
+    // Test cases for bookAppointment
+    public function testBookAppointmentSuccess()
+    {
+        
+        $_SERVER['REQUEST_METHOD'] = 'POST';
+        $_POST['doc_id'] = '1';
+        $_POST['pid'] = '3';
+        $_POST['date'] = '2025-05-10';
+        $_POST['time'] = '10:00';
+
+        // Expect output to contain success message
+        $this->expectOutputRegex('/Appointment booked successfully/');
+        $this->appointmentService->bookAppointment();
+    }
+
+ 
+
+    // Test cases for getAppointment
+    public function testGetAppointmentExistingId()
+    {
+        // Use a known appointment ID that exists
+        $appointment = $this->appointmentService->getAppointment(8);
+
+        // Assert the expected outcome
+        $this->assertIsArray($appointment);
+        $this->assertEquals('8', $appointment['app_id']);
+    }
+
+    public function testGetAppointmentNonExistingId()
+    {
+        // Use a non-existing appointment ID
+        $appointment = $this->appointmentService->getAppointment(999);
+
+        // Assert the expected outcome
+        $this->assertNull($appointment);
+    }
+
+    // Test cases for updateAppointment
+    public function testUpdateAppointmentSuccess()
+    {
+        // Call the method with new data for existing appointment
+        $result = $this->appointmentService->updateAppointment(1, '2', '1', '2024-05-11', '11:00');
+
+        // Assert the expected outcome
+        $this->assertTrue($result);
+    }
+
+   
+
+    // Test cases for cancelAppointment
+    public function testCancelAppointmentExistingId()
+    {
+        // Call the method with an existing appointment ID
+        $result = $this->appointmentService->cancelAppointment(1);
+
+        // Assert the expected outcome
+        $this->assertTrue($result);
+    }
+
+  
+
+    // Test cases for listAppointments
+    public function testListAppointmentsNotEmpty()
+    {
+        // Call the method
+        $appointments = $this->appointmentService->listAppointments();
+
+        // Assert the expected outcome
+        $this->assertNotEmpty($appointments);
+    }
+
+   
+
+    protected function tearDown(): void
+    {
+        // Clean up your database or mock objects here
+    }
+}
+
+
+
+
+
+
+
+Running tests :
+Testing Appointment service class : 
+Command : ./vendor/bin/phpunit --testdox  .\tests\AppointmentServiceTest.php 
+
+Output : 
+ 
+
+ 
+ 
+8.Test Coverage:
+Test coverage facilitates the process of identifying the areas inside your program that require testing. If there is insufficient test coverage, defects in untested code may go unnoticed.
+Improving Confidence: A higher level of test coverage gives you more assurance that your tests are adequately validating the behavior of your code. It lessens the chance that untested code paths have undiscovered bugs.
+Raising the quality of the code: More modular and well-designed code is often the outcome of creating tests. High test coverage is the goal to encourage writing testable and maintainable code.
+
+
 
 
 
